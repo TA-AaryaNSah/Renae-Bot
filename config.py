@@ -4,9 +4,9 @@ id_pattern = re.compile(r'^.\d+$')
 
 class Config(object):
 
-    API_ID = os.environ.get("API_ID", "")
-    API_HASH = os.environ.get("API_HASH", "")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "") 
+    API_ID = os.environ.get("API_ID", "32541562")
+    API_HASH = os.environ.get("API_HASH", "e37e4432298d5a5eb4a6e32c18804283")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "8333565963:AAGVAf8wPMVRM1imA8R3v7xIxmw6Ts6gXmI") 
     BOT = None
 
     # premium account string session required 😢 
@@ -14,12 +14,12 @@ class Config(object):
     
     # database config
     DB_NAME = os.environ.get("DB_NAME", "Rename_Bot")     
-    DB_URL = os.environ.get("DB_URL", "")
+    DB_URL = os.environ.get("DB_URL", "mongodb+srv://asvm:incorrectasvm@cluster0.v2z8vnw.mongodb.net/?appName=Cluster0")
  
     # other configs
     PIC = os.environ.get("PIC", "https://i.ibb.co/YTk9gzhY/IMG-20250906-144306-804.jpg")
-    ADMIN = int(os.environ.get("ADMIN", "1255023013"))
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
+    ADMIN = int(os.environ.get("ADMIN", "7006602588"))
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "1002521835919"))
 
     # free upload limit 
     FREE_UPLOAD_LIMIT = 6442450944 # calculation 6*1024*1024*1024=results
