@@ -18,7 +18,7 @@ class Config(object):
  
     # other configs
     PIC = os.environ.get("PIC", "https://i.ibb.co/YTk9gzhY/IMG-20250906-144306-804.jpg")
-    ADMIN = int(os.environ.get("ADMIN", "7006602588"))
+    ADMIN = int(os.environ.get("ADMIN", "8676822109"))
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "1002521835919"))
 
     # free upload limit 
@@ -131,13 +131,12 @@ V𝟹.𝟶.𝟶 [STABLE]"""
 
 ☞ Fᴏʀ Exᴀᴍᴘʟᴇ:-
 
-`--change-title @TechifyBots
---change-video-title @TechifyBots
---change-audio-title @TechifyBots
---change-subtitle-title @TechifyBots
---change-author @TechifyBots`
-
-📥 Fᴏʀ Hᴇʟᴘ Cᴏɴᴛ. @TechifyBots"""
+`--change-title ASVM
+--change-video-title ASVM
+--change-audio-title ASVM
+--change-subtitle-title ASVM
+--change-author ASVM'
+"""
     
     CUSTOM_FILE_NAME = """<u>🖋️ Custom File Name</u>
 
