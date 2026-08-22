@@ -16,6 +16,7 @@ async def get_stats(bot, message):
         total_premium_users = await digital_botz.total_premium_users_count()
     else:
         total_premium_users = "Disabled ✅"
+    # Ensure bot.uptime is defined in your main bot file!
     uptime = time.strftime("%Hh%Mm%Ss", time.gmtime(time.time() - bot.uptime))    
     start_t = time.time()
     rkn = await message.reply('**ᴘʀᴏᴄᴇssɪɴɢ.....**')    
@@ -34,6 +35,7 @@ async def log_file(b, m):
 async def add_premium(client, message):
     if not client.premium:
         return await message.reply_text("premium mode disabled ✅")
+    
     if client.uploadlimit:
         if len(message.command) < 4:
             return await message.reply_text("Usage : /addpremium user_id Plan_Type (e.g... `Pro`, `UltraPro`) time (e.g., '1 day for days', '1 hour for hours', or '1 min for minutes', or '1 month for months' or '1 year for year')", quote=True)
@@ -54,7 +56,7 @@ async def add_premium(client, message):
 
         seconds = await get_seconds(time_string)
         if seconds <= 0:
-            return await message.reply_text("Invalid time format. Please use `/addpremium user_id 1 year 1 month 1 day 1 min 10 s`", quote=True)
+            return await message.reply_text("Invalid time format. Please use `/addpremium user_id Plan_Type 1 year 1 month 1 day 1 min 10 s`", quote=True)
         expiry_time = datetime.datetime.now() + datetime.timedelta(seconds=seconds)
         user_data = {"id": user_id, "expiry_time": expiry_time}
         await digital_botz.addpremium(user_id, user_data, limit, type)
@@ -64,10 +66,12 @@ async def add_premium(client, message):
         data = await digital_botz.get_user(user_id)
         expiry = data.get("expiry_time")
         expiry_str_in_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n⏱️ ᴇxᴘɪʀʏ ᴛɪᴍᴇ : %I:%M:%S %p")
+        
         await message.reply_text(f"ᴘʀᴇᴍɪᴜᴍ ᴀᴅᴅᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ✅\n\n👤 ᴜꜱᴇʀ : {user.mention}\n⚡ ᴜꜱᴇʀ ɪᴅ : <code>{user_id}</code>\nᴘʟᴀɴ :- `{type}`\nᴅᴀɪʟʏ ᴜᴘʟᴏᴀᴅ ʟɪᴍɪᴛ :- `{humanbytes(limit)}`\n⏰ ᴘʀᴇᴍɪᴜᴍ ᴀᴄᴄᴇꜱꜱ : <code>{time_string}</code>\n\n⏳ ᴊᴏɪɴɪɴɢ ᴅᴀᴛᴇ : {current_time}\n\n⌛️ ᴇxᴘɪʀʏ ᴅᴀᴛᴇ : {expiry_str_in_ist}", quote=True, disable_web_page_preview=True)
         await client.send_message(
                 chat_id=user_id,
-                text=f"👋 ʜᴇʏ {user.mention},\nᴛʜᴀɴᴋ ʏᴏᴜ ꜰᴏʀ ᴘᴜʀᴄʜᴀꜱɪɴɢ ᴘʀᴇᴍɪᴜᴍ.\nᴇɴᴊᴏʏ !! ✨🎉\n\n⏰ ᴘʀᴇᴍɪᴜᴍ ᴀᴄᴄᴇꜱꜱ : <code>{time}</code>\nᴘʟᴀɴ :- `{type}`\nᴅᴀɪʟʏ ᴜᴘʟᴏᴀᴅ ʟɪᴍɪᴛ :- `{humanbytes(limit)}`\n⏳ ᴊᴏɪɴɪɴɢ ᴅᴀᴛᴇ : {current_time}\n\n⌛️ ᴇxᴘɪʀʏ ᴅᴀᴛᴇ : {expiry_str_in_ist}", disable_web_page_preview=True              
+                # FIXED: {time} changed to {time_string} below
+                text=f"👋 ʜᴇʏ {user.mention},\nᴛʜᴀɴᴋ ʏᴏᴜ ꜰᴏʀ ᴘᴜʀᴄʜᴀꜱɪɴɢ ᴘʀᴇᴍɪᴜᴍ.\nᴇɴᴊᴏʏ !! ✨🎉\n\n⏰ ᴘʀᴇᴍɪᴜᴍ ᴀᴄᴄᴇꜱꜱ : <code>{time_string}</code>\nᴘʟᴀɴ :- `{type}`\nᴅᴀɪʟʏ ᴜᴘʟᴏᴀᴅ ʟɪᴍɪᴛ :- `{humanbytes(limit)}`\n⏳ ᴊᴏɪɴɪɴɢ ᴅᴀᴛᴇ : {current_time}\n\n⌛️ ᴇxᴘɪʀʏ ᴅᴀᴛᴇ : {expiry_str_in_ist}", disable_web_page_preview=True              
             )
     else:
         if len(message.command) < 3:
@@ -86,10 +90,12 @@ async def add_premium(client, message):
         data = await digital_botz.get_user(user_id)
         expiry = data.get("expiry_time")
         expiry_str_in_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n⏱️ ᴇxᴘɪʀʏ ᴛɪᴍᴇ : %I:%M:%S %p")
+        
         await message.reply_text(f"ᴘʀᴇᴍɪᴜᴍ ᴀᴅᴅᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ✅\n\n👤 ᴜꜱᴇʀ : {user.mention}\n⚡ ᴜꜱᴇʀ ɪᴅ : <code>{user_id}</code>\n⏰ ᴘʀᴇᴍɪᴜᴍ ᴀᴄᴄᴇꜱꜱ : <code>{time_string}</code>\n\n⏳ ᴊᴏɪɴɪɴɢ ᴅᴀᴛᴇ : {current_time}\n\n⌛️ ᴇxᴘɪʀʏ ᴅᴀᴛᴇ : {expiry_str_in_ist}", quote=True, disable_web_page_preview=True)
         await client.send_message(
                 chat_id=user_id,
-                text=f"👋 ʜᴇʏ {user.mention},\nᴛʜᴀɴᴋ ʏᴏᴜ ꜰᴏʀ ᴘᴜʀᴄʜᴀꜱɪɴɢ ᴘʀᴇᴍɪᴜᴍ.\nᴇɴᴊᴏʏ !! ✨🎉\n\n⏰ ᴘʀᴇᴍɪᴜᴍ ᴀᴄᴄᴇꜱꜱ : <code>{time}</code>\n⏳ ᴊᴏɪɴɪɴɢ ᴅᴀᴛᴇ : {current_time}\n\n⌛️ ᴇxᴘɪʀʏ ᴅᴀᴛᴇ : {expiry_str_in_ist}", disable_web_page_preview=True              
+                # FIXED: {time} changed to {time_string} below
+                text=f"👋 ʜᴇʏ {user.mention},\nᴛʜᴀɴᴋ ʏᴏᴜ ꜰᴏʀ ᴘᴜʀᴄʜᴀꜱɪɴɢ ᴘʀᴇᴍɪᴜᴍ.\nᴇɴᴊᴏʏ !! ✨🎉\n\n⏰ ᴘʀᴇᴍɪᴜᴍ ᴀᴄᴄᴇꜱꜱ : <code>{time_string}</code>\n⏳ ᴊᴏɪɴɪɴɢ ᴅᴀᴛᴇ : {current_time}\n\n⌛️ ᴇxᴘɪʀʏ ᴅᴀᴛᴇ : {expiry_str_in_ist}", disable_web_page_preview=True              
             )
 
 @Client.on_message(filters.command("removepremium") & filters.user(Config.ADMIN))
@@ -97,7 +103,7 @@ async def remove_premium(bot, message):
     if not bot.premium:
         return await message.reply_text("premium mode disabled ✅")
     if len(message.command) == 2:
-        user_id = int(message.command[1])  # Convert the user_id to integer
+        user_id = int(message.command[1])
         user = await bot.get_users(user_id)
         if await digital_botz.has_premium_access(user_id):
             await digital_botz.remove_premium(user_id)
@@ -264,7 +270,8 @@ async def send_msg(user_id, message):
         return 200
     except FloodWait as e:
         await asyncio.sleep(e.value)
-        return send_msg(user_id, message)
+        # FIXED: Added the 'await' keyword below
+        return await send_msg(user_id, message)
     except InputUserDeactivated:
         logger.info(f"{user_id} : Dᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ")
         return 400
