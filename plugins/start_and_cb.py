@@ -272,8 +272,33 @@ async def cb_handler(client, query: CallbackQuery):
         await query.message.edit_text(
             text=rkn.THUMBNAIL,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[
-             InlineKeyboardButton("ʙᴀᴄᴋ", callback_data = "help")]])) 
+            reply_markup=InlineKeyboardMarkup([
+                [
+                    InlineKeyboardButton("🖼️ ᴠɪᴇᴡ ᴛʜᴜᴍʙɴᴀɪʟ", callback_data="view_thumb"),
+                    InlineKeyboardButton("🗑️ ᴅᴇʟᴇᴛᴇ ᴛʜᴜᴍʙɴᴀɪʟ", callback_data="del_thumb")
+                ],
+                [
+                    InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="help")
+                ]
+            ])) 
+
+    # NEW: Callback handler for viewing the thumbnail
+    elif data == "view_thumb":
+        thumb = await digital_botz.get_thumbnail(query.from_user.id)
+        if thumb:
+            await client.send_photo(chat_id=query.message.chat.id, photo=thumb)
+            await query.answer("Here is your saved thumbnail!", show_alert=False)
+        else:
+            await query.answer("😔 You Don't Have Any Thumbnail Saved!", show_alert=True)
+
+    # NEW: Callback handler for deleting the thumbnail
+    elif data == "del_thumb":
+        thumb = await digital_botz.get_thumbnail(query.from_user.id)
+        if thumb:
+            await digital_botz.set_thumbnail(query.from_user.id, file_id=None)
+            await query.answer("❌️ Thumbnail Deleted Successfully!", show_alert=True)
+        else:
+            await query.answer("😔 You Don't Have Any Thumbnail to delete!", show_alert=True)
       
     elif data == "caption":
         await query.message.edit_text(
