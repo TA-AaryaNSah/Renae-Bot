@@ -24,5 +24,5 @@ async def _(bot, message):
         ).days > ban_status["ban_duration"]:
             await digital_botz.remove_ban(user_id)
         else:
-            return await message.reply_text("Sorry Sir, 😔 You are Banned!.. Please Contact - @TechifyBots") 
+            return await message.reply_text("Sorry Sir, 😔 You are Banned!.. Please Contact") 
     await message.continue_propagation()
