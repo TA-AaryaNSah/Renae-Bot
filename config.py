@@ -40,12 +40,10 @@ class Config(object):
 
 class rkn(object):
     # part of text configuration
-    START_TXT = """<b>{},
+    START_TXT = """<b>{}, ᴛʜɪs ɪs ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ & ᴘᴏᴡᴇʀғᴜʟ ʀᴇɴᴀᴍᴇ ʙᴏᴛ 🚀...\n
+Wɪᴛʜ ᴛʜɪs ʙᴏᴛ, ʏᴏᴜ ᴄᴀɴ ᴇᴀsɪʟʏ ʀᴇɴᴀᴍᴇ ʏᴏᴜʀ ғɪʟᴇs, ᴄʜᴀɴɢᴇ ᴛʜᴜᴍʙɴᴀɪʟs & ᴄᴜsᴛᴏᴍɪᴢᴇ ᴄᴀᴘᴛɪᴏɴs. ✨
 
-𝚃ʜɪs 𝙸s 𝙰ɴ 𝙰ᴅᴠᴀᴄᴇᴅ 𝙰ɴᴅ 𝚈ᴇᴛ 𝙿ᴏᴡᴇʀғᴜʟ 𝚁ᴇɴᴀᴍᴇ 𝙱ᴏᴛ
-𝚄sɪɴɢ 𝚃ʜɪs 𝙱ᴏᴛ 𝚈ᴏᴜ 𝙲ᴀɴ 𝚁ᴇɴᴀᴍᴇ & 𝙲ʜᴀɴɢᴇ 𝚃ʜᴜᴍʙɴᴀɪʟ 𝙾ғ 𝚈ᴏᴜʀ 𝙵ɪʟᴇ 
-𝚈ᴏᴜ 𝙲ᴀɴ 𝙰ʟsᴏ 𝙲ᴏɴᴠᴇʀᴛ 𝚅ɪᴅᴇᴏ 𝚃ᴏ 𝙵ɪʟᴇ & 𝙵ɪʟᴇ 𝚃ᴏ 𝚅ɪᴅᴇᴏ
-𝚃𝙷𝙸𝚂 𝙱𝙾𝚃 𝙰𝙻𝚂𝙾 𝚂𝚄𝙿𝙿𝙾𝚁𝚃𝚂 𝙲𝚄𝚂𝚃𝙾𝙼 𝚃𝙷𝚄𝙼𝙱𝙽𝙰𝙸𝙻 𝙰𝙽𝙳 𝙲𝚄𝚂𝚃𝙾𝙼 𝙲𝙰𝙿𝚃𝙸𝙾𝙽"""
+Vɪᴅᴇᴏ ➜ Fɪʟᴇ | Fɪʟᴇ ➜ Vɪᴅᴇᴏ | Cᴜsᴛᴏᴍ Tʜᴜᴍʙɴᴀɪʟ Sᴜᴘᴘᴏʀᴛ | Cᴜsᴛᴏᴍ Cᴀᴘᴛɪᴏɴ Sᴜᴘᴘᴏʀᴛ | Fᴀsᴛ & Eᴀsʏ Rᴇɴᴀᴍɪɴɢ | Sɪᴍᴘʟᴇ • Fᴀsᴛ • Pᴏᴡᴇʀғᴜʟ"""
 
     ABOUT_TXT = """<b>╭───────────⍟
 ├🤖 ᴍy ɴᴀᴍᴇ : {}
@@ -57,9 +55,7 @@ class rkn(object):
 ╰───────────────⍟ """
 
     HELP_TXT = """✏️ <b><u>Hᴏᴡ Tᴏ Rᴇɴᴀᴍᴇ A Fɪʟᴇ</u></b>
-<b>•></b> Sᴇɴᴅ Aɴy Fɪʟᴇ Aɴᴅ Tyᴩᴇ Nᴇᴡ Fɪʟᴇ Nɴᴀᴍᴇ \nAɴᴅ Aᴇʟᴇᴄᴛ Tʜᴇ Fᴏʀᴍᴀᴛ [ document, video, audio ].           
-ℹ️ 𝗔𝗻𝘆 𝗢𝘁𝗵𝗲𝗿 𝗛𝗲𝗹𝗽 𝗖𝗼𝗻𝘁𝗮𝗰𝘁 :- <a href=https://t.me/TechifySupport>𝑺𝑼𝑷𝑷𝑶𝑹𝑻 𝑮𝑹𝑶𝑼𝑷</a>
-"""
+<b>•></b> Sᴇɴᴅ Aɴy Fɪʟᴇ Aɴᴅ Tyᴩᴇ Nᴇᴡ Fɪʟᴇ Nɴᴀᴍᴇ \n\nAɴᴅ Aᴇʟᴇᴄᴛ Tʜᴇ Fᴏʀᴍᴀᴛ [ Document, Video, Audio ]."""
 
     UPGRADE_PREMIUM= """
 •⪼ ★𝘗𝘭𝘢𝘯𝘴    -  ⏳𝘋𝘢𝘵𝘦 - 💸𝘗𝘳𝘪𝘤𝘦 
@@ -132,7 +128,7 @@ V𝟹.𝟶.𝟶 [STABLE]"""
 --change-video-title ASVM
 --change-audio-title ASVM
 --change-subtitle-title ASVM
---change-author ASVM'
+--change-author ASVM`
 """
     
     CUSTOM_FILE_NAME = """<u>🖋️ Custom File Name</u>
@@ -151,32 +147,22 @@ Exᴀᴍᴩʟᴇ:- `/setprefix @TechifyBots`"""
 
     DEV_TXT = """<b><u>Sᴩᴇᴄɪᴀʟ Tʜᴀɴᴋꜱ & Dᴇᴠᴇʟᴏᴩᴇʀꜱ</b></u>
     
-» 𝗦𝗢𝗨𝗥𝗖𝗘 𝗖𝗢𝗗𝗘 : <a href=https://github.com/TechifyBots/Rename-Bot>Rename-Bot</a>
-
-• ❣️ <a href=https://github.com/RknDeveloper>RknDeveloper</a>
-• ❣️ <a href=https://github.com/DigitalBotz>DigitalBotz</a>
-• ❣️ <a href=https://github.com/TechifyBots>TechifyBots</a>"""
+More Update Coming Soon..."""
 
     SEND_METADATA = """
 ❪ SET CUSTOM METADATA ❫
 
 ☞ Fᴏʀ Exᴀᴍᴘʟᴇ:-
 
-`--change-title @TechifyBots
---change-video-title @TechifyBots
---change-audio-title @TechifyBots
---change-subtitle-title @TechifyBots
---change-author @TechifyBots`
-
-📥 Fᴏʀ Hᴇʟᴘ Cᴏɴᴛ. @TechifyBots
+`--change-title ASVM
+--change-video-title ASVM
+--change-audio-title ASVM
+--change-subtitle-title ASVM
+--change-author ASVM`
 """
     
     PROGRESS = """<b>
-╭━━━━━━━━◉🚀◉━━━━━━━━╮
-┃   𝗣𝗥𝗢𝗖𝗘𝗦𝗦𝗜𝗡𝗚...❱━➣  
-┣━━━━━━━━━━━━━━━━━━━━╯
-┣⪼ 📦 𝗦𝗜𝗭𝗘: {1} | {2}
-┣⪼ 📊 𝗗𝗢𝗡𝗘: {0}%
-┣⪼ 🚀 𝗦𝗣𝗘𝗘𝗗: {3}/s
-┣⪼ ⏰ 𝗘𝗧𝗔: {4}
-╰━━━━━━━━◉🔥◉━━━━━━━━╯</b>"""
+╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╮
+┃  𝗣𝗥𝗢𝗖𝗘𝗦𝗦𝗜𝗡𝗚...\n\n
+┣⪼ 𝗦𝗜𝗭𝗘: {1} | {2} | 𝗗𝗢𝗡𝗘: {0}% | 𝗦𝗣𝗘𝗘𝗗: {3}/s | 𝗘𝗧𝗔: {4}
+╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯</b>"""
