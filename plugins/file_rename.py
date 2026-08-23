@@ -59,7 +59,7 @@ async def rename_start(client, message):
             print(f"Error in rename_start: {e}")
     else:
         if rkn_file.file_size > 2000 * 1024 * 1024 and client.premium:
-            return await message.reply_text("If you want to rename 4GB+ files then you will have to buy premium. /plans")
+            return await message.reply_text("4GB Renaming Coming Soon...")
         try:
             await message.reply_text(
                 text=f"**__ᴍᴇᴅɪᴀ ɪɴꜰᴏ:\n\n◈ ᴏʟᴅ ꜰɪʟᴇ ɴᴀᴍᴇ: `{filename}`\n\n◈ ᴇxᴛᴇɴꜱɪᴏɴ: `{extension_type.upper()}`\n◈ ꜰɪʟᴇ ꜱɪᴢᴇ: `{filesize}`\n◈ ᴍɪᴍᴇ ᴛʏᴇᴩ: `{mime_type}`\n◈ ᴅᴄ ɪᴅ: `{dcid}`\n\nᴘʟᴇᴀsᴇ ᴇɴᴛᴇʀ ᴛʜᴇ ɴᴇᴡ ғɪʟᴇɴᴀᴍᴇ ᴡɪᴛʜ ᴇxᴛᴇɴsɪᴏɴ ᴀɴᴅ ʀᴇᴘʟʏ ᴛʜɪs ᴍᴇssᴀɢᴇ....__**",
@@ -168,8 +168,8 @@ async def upload_doc(bot, update):
         suffix = user_data.get('suffix', None)
         new_filename = await add_prefix_suffix(new_filename_, prefix, suffix)
     except Exception as e:
-        return await rkn_processing.edit(f"⚠️ Something went wrong can't able to set Prefix or Suffix ☹️ \n\n❄️ Contact My Creator -> @TechifyBots\nError: {e}")
-    # msg file location 
+        return await rkn_processing.edit(f"⚠️ Something went wrong can't able to set Prefix or Suffix ☹️ \n\n\nError: {e}")
+    # msg file location
     file = update.message.reply_to_message
     media = getattr(file, file.media.value)
     # File paths for download and metadata
